@@ -44,16 +44,15 @@ func Eval(expr string) int {
 		switch token {
 			case "(":
 			    ops = append(ops, token)
-		    case "+", "-":	
+		        case "+", "-":	
 			    reduce("+-&/")
 				ops = append(ops, token)
-
-            case "*", "/":	
+                        case "*", "/":	
 			    reduce("*/")
 				ops = append(ops, token)
-            case ")":
+                        case ")":
 			    reduce("+-*/(")
-		    default:
+		        default:
 			    num, _ := strconv.Atoi(token)
 				nums = append(nums, num)
 		}
@@ -64,7 +63,7 @@ func Eval(expr string) int {
 
 func main (){
 	fmt.Println(Eval("5"))
-    fmt.Println(Eval("1+2"))
+        fmt.Println(Eval("1+2"))
 	fmt.Println(Eval("1-2+3"))
 	fmt.Println(Eval("3*(3+1*3)/2"))
 	fmt.Println(Eval("3*((3+1)*3)/2"))
