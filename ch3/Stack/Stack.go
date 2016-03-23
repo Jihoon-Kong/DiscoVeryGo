@@ -34,7 +34,6 @@ func Eval(expr string) int {
 			        nums = append(nums,a-b)
 			    case "*":
 			        nums = append(nums,a*b)
-				
 			    case "/":
 			        nums = append(nums,a/b)
 		    }
